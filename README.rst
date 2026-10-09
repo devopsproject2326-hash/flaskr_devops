@@ -66,3 +66,18 @@ Run with coverage report::
     $ coverage run -m pytest
     $ coverage report
     $ coverage html  # open htmlcov/index.html in a browser
+
+Dockerization
+-------------
+
+Build the image::
+
+    $ docker build -t flaskr .
+
+Initialize the database in a volume::
+
+    $ docker run --rm -v flaskr-data:/app/instance flaskr flask --app flaskr init-db
+
+Run the application::
+
+    $ docker run -d --name flaskr-app -p 5001:5000 -v flaskr-data:/app/instance flaskr
