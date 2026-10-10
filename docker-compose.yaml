@@ -1,0 +1,13 @@
+services:
+  flaskr:
+    build: .
+    ports:
+      - "5001:5000"
+    volumes:
+      - flaskr-data:/app/instance
+  
+
+volumes:
+  flaskr-data:
+    external: true
+    name: flaskr-data
