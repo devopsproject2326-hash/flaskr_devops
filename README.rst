@@ -81,3 +81,18 @@ Initialize the database in a volume::
 Run the application::
 
     $ docker run -d --name flaskr-app -p 5001:5000 -v flaskr-data:/app/instance flaskr
+
+Docker-compose file
+-------------------
+
+Initialize the database::
+
+    $ docker compose run --rm flaskr flask --app flaskr init-db
+
+Run the app::
+
+    $ docker compose up -d
+
+Stop the app::
+
+    $ docker compose down
