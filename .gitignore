@@ -12,3 +12,10 @@ build/
 .idea/
 *.swp
 *~
+
+
+# Terraform local configuration and state
+/terraform/terraform.tfvars
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup
+/terraform/.terraform/
