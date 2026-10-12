@@ -96,3 +96,44 @@ Run the app::
 Stop the app::
 
     $ docker compose down
+
+Terraform Infrastructure
+========================
+
+Resources
+---------
+
+* One Ubuntu EC2 instance in (eu-north-1).
+* Security groups allowing HTTP traffic on port 80.
+* SSH access restricted to specified public IP address.
+
+prequesites
+-----------
+
+* AWS CLI configured with appropriate credentials.
+* Terraform installed.
+* An AWS account to manage the appropriate Resources.
+
+Deploy
+------
+
+    $ terraform init
+    $ terrafom fmt
+    $ terrafom validate
+    $ terraform plan
+    $ terrafom apply
+
+Review the plan before applying the deployment.
+
+Destroy
+-------
+
+To remove the resources managed by this Terraform configuration
+
+    $ terrafom Destroy
+
+Security
+--------
+
+* Do no commit AWS credentials, terraform.tfvars, or terraform state files.
+* Restrict SSH access to your own public IP only.
